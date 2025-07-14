@@ -9,7 +9,7 @@ const app = express();
 db();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     withCredentials: true
@@ -17,6 +17,10 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the URL Shortener API');
+});
 
 // Routes
 const shortUrlRoutes = require('./routes/shortUrlRoutes.js'); 

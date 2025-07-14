@@ -4,7 +4,7 @@ QuickURL.io is a full-stack URL shortener application built with **Next.js**, **
 
 ## 🌐 Live Preview
 
-> Coming soon... (deploy your frontend & backend and add the links here)
+- [Live](https://quickurl-eta.vercel.app)
 
 ---
 
