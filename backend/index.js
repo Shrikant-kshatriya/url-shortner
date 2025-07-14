@@ -27,8 +27,10 @@ app.get('/', (req, res) => {
 const shortUrlRoutes = require('./routes/shortUrlRoutes.js'); 
 app.use('/', shortUrlRoutes);
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+if (require.main === module) {
+  app.listen(process.env.PORT || 4000, () => {
+    console.log(`Server running on port ${process.env.PORT || 4000}`);
+  });
+}
 
-module.exports = app; 
+module.exports = app;
