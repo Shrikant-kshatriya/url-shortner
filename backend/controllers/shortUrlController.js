@@ -1,6 +1,6 @@
 const ShortUrl = require('../models/ShortUrl');
 
-const { nanoid } = require('nanoid');
+const nanoid = require('nanoid/non-secure');
 
 const shortenUrl = async (req, res) => {
     const { url } = req.body;
