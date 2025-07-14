@@ -24,8 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
-// const shortUrlRoutes = require('./routes/shortUrlRoutes.js'); 
-// app.use('/', shortUrlRoutes);
+const shortUrlRoutes = require('./routes/shortUrlRoutes.js'); 
+app.use('/', shortUrlRoutes);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
