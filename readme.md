@@ -41,7 +41,6 @@ QuickURL.io is a full-stack URL shortener application built with **Next.js**, **
 3. Create a `.env` file:
 
    ```env
-   PORT=4000
    CORS_ORIGIN=http://localhost:3000
    BASE_URL=http://localhost:4000
    MONGODB_URI=your_mongodb_connection_string
