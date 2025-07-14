@@ -1,6 +1,6 @@
-const ShortUrl = require('../models/ShortUrl');
+const ShortUrl = require('../models/ShortURL.js');
 
-const nanoid = require('nanoid/non-secure');
+const { randomUUID } = require('crypto');
 
 const shortenUrl = async (req, res) => {
     const { url } = req.body;
@@ -13,7 +13,7 @@ const shortenUrl = async (req, res) => {
         return res.status(400).json({ error: 'Invalid URL format' });
     }
 
-    const short_code = nanoid(7);
+    const short_code = randomUUID().slice(0, 7); 
     try {
         const newUrl = new ShortUrl({
             original_url: url,
