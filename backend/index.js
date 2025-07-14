@@ -9,7 +9,7 @@ const app = express();
 db();
 
 app.use(cors({
-    origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    origin: process.env.CORS_ORIGIN,
     methods: ['GET', 'POST', 'PATCH', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     withCredentials: true
